@@ -1,0 +1,60 @@
+{% load static %}
+<DOCTYPE html>
+    <html lang="eng" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+                Sign UP
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static "share/all.css" %}">
+    </head>
+    <body>
+    <form class="sign" action={% url 'share:signup' %} method="post">
+        {% csrf_token %}
+        <h1>Sign Up Dongeto</h1>
+        {{ form }}
+        <input type="submit" value="login" style="background: #67b168; border-radius: 5px">
+
+    </form>
+    </html>
+    <style scope>
+        span.helptext{
+            color: snow;
+        }
+        form.sign {
+            margin-top: 200px;
+            align-items: center;
+            border-radius: 20px;
+            background-color: seagreen;
+            width : 250px ;
+            height : auto;
+            padding: 50px;
+            position  :center ;
+            margin: auto;
+        }
+        h1{
+            margin-bottom: 20px;
+            color: snow;
+        }
+
+        input{
+            color: #1b1b1b;
+            background-color: whitesmoke;
+            padding: 10px;
+            margin: 5px;
+
+        }
+        label{
+            color: mediumspringgreen;
+            padding: 5px;
+            margin: 5px;
+        }
+        button{
+            margin: 10px;
+            padding: 10px;
+            background-color: #5cb85c;
+            border-radius: 3px;
+        }
+    </style>
